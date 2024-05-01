@@ -109,7 +109,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="calculateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rK0-bm-QBc"/>
-                                            <segue destination="lkq-xS-Cin" kind="show" identifier="showResult" id="UBn-b2-Y4r"/>
+                                            <segue destination="lkq-xS-Cin" kind="show" identifier="showResult" id="cnm-1F-VWB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -210,6 +210,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MPg-nb-Sce"/>
                     <connections>
+                        <outlet property="advice" destination="9IV-CT-mxw" id="jI2-o8-IHi"/>
                         <outlet property="result" destination="VU9-2W-Sd5" id="DL5-N1-3wY"/>
                     </connections>
                 </viewController>

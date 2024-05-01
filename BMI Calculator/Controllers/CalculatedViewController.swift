@@ -9,12 +9,24 @@
 import UIKit
 
 class CalculatedViewController: UIViewController {
+    @IBOutlet weak var advice: UILabel!
     var resultValue:Int?
     @IBOutlet weak var result: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         result.text = String(resultValue ?? 0)
+        if let value = resultValue{
+            if value > 100 {
+                view.backgroundColor = .systemPink
+                advice.text = "You need to lose weigh"
+                
+            }else{
+                view.backgroundColor = .green
+                
+
+            }
+        }
         
     }
     
