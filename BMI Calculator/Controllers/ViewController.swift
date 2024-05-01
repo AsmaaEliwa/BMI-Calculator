@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider1Value: UILabel!
     
     @IBOutlet weak var slider2Value: UILabel!
+    var bmi = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,6 +27,21 @@ class ViewController: UIViewController {
         }else{
 //            slider2Value.text =  String(format:"%.2f",sender.value)
             slider2Value.text =  "\(Int(sender.value)) Kg"
+        }
+    }
+    @IBAction func calculateButton(_ sender: UIButton) {
+        let hight = slider1.value
+        let weight = slider2.value
+        bmi = Int(weight) / Int(hight*hight)
+        print(bmi)
+//        let secondVC = SecondViewController()
+//        secondVC.result = String(bmi)
+//        present(secondVC, animated: true)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResult"{
+            let destinationVC = segue.destination as! CalculatedViewController
+            destinationVC.resultValue = bmi
         }
     }
     
